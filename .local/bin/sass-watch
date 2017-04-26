@@ -1,0 +1,3 @@
+#!/bin/bash
+
+scss -C --sourcemap=none --style expanded --watch $@

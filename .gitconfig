@@ -1,0 +1,16 @@
+[user]
+    name = Lars Lernestål
+[push]
+    default = simple
+[alias]
+    history = log --topo-order --abbrev-commit --decorate --format=format:'%C(bold 31)% h%C(reset)%C(bold 106)% ai%C(reset)%C(228)%>>|(52)% ae%C(reset)%C(231)% s%C(reset) %C(bold 231 31)%D%C(reset)'
+    filelog = "!f(){ git log --follow -p -- $1; }; f"
+    repo-refresh = fetch -v --prune --all
+    sync = "!f(){ git checkout master; git fetch -v --prune --all; git pull; git checkout base; git pull; }; f"
+    set-user = "!f(){ git-set-user $1 }; f"
+    ui = "!f(){ killall gitg > /dev/null; gitg -a . & }; f"
+[merge]
+    tool = sublimerge
+[mergetool "sublimerge"]
+    cmd = subl -n --wait \"$REMOTE\" \"$BASE\" \"$LOCAL\" \"$MERGED\" --command \"sublimerge_diff_views\"
+    trustExitCode = false

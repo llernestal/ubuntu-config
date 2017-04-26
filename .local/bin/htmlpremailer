@@ -1,0 +1,11 @@
+#!/bin/bash
+PYTHONIOENCODING=utf-8
+
+
+for file in `ls $@ | grep .html | grep -v inline | sed 's/.html//' | xargs echo`;do
+	echo $file".html > "$file"_inline.html, "$file".txt"
+	python -m premailer -f $file".html" --preserve-style-tags --method xml > $file"_inline.html"
+	cat $file".html" | nodejs /usr/local/bin/html-to-text > $file".txt"
+	echo
+done;  
+

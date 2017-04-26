@@ -1,0 +1,17 @@
+composer() { \
+    docker run -it --rm --net=host \
+    --user $(id -u):$(id -g) \
+    -v $(pwd):/app \
+    -v ~/.composer:/composer \
+    -v /etc/passwd:/etc/passwd \
+    -v ~/.ssh:$HOME/.ssh \
+    composer/composer $@
+}
+
+docker-purge-images() { docker rmi $(docker images | grep '<none>' | awk '{print $3}') }
+
+docker-purge-volumes() { docker volume rm $(docker volume ls -qf dangling=true) }
+
+docker-purge-containers() { docker ps -a | awk '{print $1}' | xargs --no-run-if-empty docker rm }
+
+docker-kill-all() { docker stop $(docker ps -a -q -f name=$1) &&  docker rm $(docker ps -a -q -f name=$1) }

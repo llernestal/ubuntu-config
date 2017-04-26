@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ $1 = "tilf" ]; then
+    git config user.name "Lars Lernestål";
+    git config user.email lars@tilf.se;
+    exit;
+fi
+if [ $1 = "github" ]; then
+    git config user.name llernestal;
+    git config user.email lars.lernestal@gmail.com
+    exit;
+fi

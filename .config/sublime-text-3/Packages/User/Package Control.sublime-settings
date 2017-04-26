@@ -1,0 +1,41 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Babel",
+		"Chain of Command",
+		"ColorPicker",
+		"Colorsublime",
+		"DocBlockr",
+		"Dockerfile Syntax Highlighting",
+		"EditorConfig",
+		"GitGutter",
+		"GotoDocumentation",
+		"Jinja2",
+		"JSX",
+		"LESS",
+		"Markdown Extended",
+		"Markdown Preview",
+		"Monokai Extended",
+		"nginx",
+		"Nunjucks Syntax",
+		"Origami",
+		"Package Control",
+		"PHP-Twig",
+		"Phpcs",
+		"SCSS",
+		"SublimeCodeIntel",
+		"SublimeGit",
+		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
+		"SublimeLinter-pep8",
+		"SublimeLinter-php",
+		"SublimeLinter-phpcs",
+		"SublimeLinter-pyyaml",
+		"Sublimerge 3",
+		"TrailingSpaces"
+	]
+}
